@@ -31,7 +31,7 @@ function execut(arr,element){
 }
 
 
-var slidNav = function(element){
+const slidNav = function(element){
     execut(dots,element);
     execut(videos,element);
     execut(contents,element);
