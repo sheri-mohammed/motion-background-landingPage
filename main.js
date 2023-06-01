@@ -24,21 +24,16 @@ closeM.addEventListener("click",()=>{
     list.classList.remove("list-appear");
 })
 
+dots.forEach((dot,i)=>{
+    dot.addEventListener("click",()=>{
+        execut(dots,i);
+        execut(videos,i);
+        execut(contents,i);
+    })
+})
+
 function execut(arr,element){
     console.log(element)
     arr.forEach((el)=>el.classList.remove("active"));
     arr[element].classList.add("active");
 }
-
-
-const slidNav = function(element){
-    execut(dots,element);
-    execut(videos,element);
-    execut(contents,element);
-}
-
-dots.forEach((dot,i)=>{
-    dot.addEventListener("click",()=>{
-        slidNav(i)
-    })
-})
