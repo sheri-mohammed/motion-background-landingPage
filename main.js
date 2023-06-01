@@ -4,7 +4,6 @@ let nav = document.querySelector(".header nav");
 let list = document.querySelector(".header nav ul");
 let videos = document.querySelectorAll(".video-sliding video");
 let contents = document.querySelectorAll(".landing .content");
-console.log(contents)
 let dots = document.querySelectorAll(".slider-dots i");
 
 
@@ -25,15 +24,17 @@ closeM.addEventListener("click",()=>{
     list.classList.remove("list-appear");
 })
 
+function execut(arr,element){
+    console.log(element)
+    arr.forEach((el)=>el.classList.remove("active"));
+    arr[element].classList.add("active");
+}
+
+
 var slidNav = function(element){
-    dots.forEach((dot)=>dot.classList.remove("active"));
-    dots[element].classList.add("active");
-
-    videos.forEach((vid)=>vid.classList.remove("active"));
-    videos[element].classList.add("active");
-
-    contents.forEach((content)=>content.classList.remove("active"));
-    contents[element].classList.add("active");
+    execut(dots,element);
+    execut(videos,element);
+    execut(contents,element);
 }
 
 dots.forEach((dot,i)=>{
